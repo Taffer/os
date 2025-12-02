@@ -1,14 +1,14 @@
 package:
   name: linkerd2-proxy-init
   version: "2.4.3"
-  epoch: 4 # CVE-2025-47906
+  epoch: 5
   description: "Init container that sets up the iptables rules to forward traffic into the Linkerd2 sidecar proxy"
   copyright:
     - license: Apache-2.0
   dependencies:
     runtime:
       - ip6tables
-      - iptables-xtables-privileged
+      - iptables-xtables-privileged # WHAT TO DO about iptables-wrappers change?
       - libcap
       - libcap-utils
   # Required because the -compat subpackage creates a file in /run
